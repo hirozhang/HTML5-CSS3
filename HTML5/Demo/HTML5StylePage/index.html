@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>HTML5 Demo</title>
+    <style type="text/css">
+        * { margin:0; padding:0;}
+        header, section, footer, article, aside, nav, hgroup { display:block;}
+
+        header, section, footer { width:800px; margin:0 auto;}
+
+        header { padding:10px 0; border-bottom:3px solid #ccc; margin-bottom:15px;}
+        nav { background:#eee;}
+
+        section { overflow:hidden; height:1%;}
+
+        article { width:580px; float:left;}
+        img { float:left; margin-right:10px;}
+        aside { width:200px; float:right;}
+
+        footer { padding:10px 0; border-top:3px solid #ccc; margin-top:15px;}
+    </style>
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+    <header>
+        <hgroup>
+            <h1>Hiro</h1>
+            <h2>又一个WP博客</h2>
+        </hgroup>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Photo</a>
+            <a href="#">Projects</a>
+        </nav>
+    </header>
+
+    <section>
+        <article>
+            <h3>CSS:区分IE版本的三个方法</h3>
+            <img src="http://www.ihiro.org/blog/wp-content/uploads/2011/03/ie-specific-css.png" alt=""/>
+            <p>虽然我们从心理上都不愿意去处理IE的bug，但我们不得不面对老板和浏览者们仍然在使用IE。介于不同浏览器有不同的渲染器，这往往会使开发者们感到很沮丧。我们通常使用IE条件判断语言来处理IE的CSS问题，但其实还是有其他的一些方法来处理IE的CSS bug的。</p>
+            <p>一、IE条件判断语句； 二、CSS规则（IE CSS hacks）； 三、HTML条件判断，给出不同的className。</p>
+        </article>
+        <aside>
+            右边
+        </aside>
+    </section>
+
+    <footer>
+        <p>Copyright 2009 - 2011</p>
+    </footer>
+</body>
+</html>
