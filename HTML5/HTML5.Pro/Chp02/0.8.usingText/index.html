@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Using Text</title>
+</head>
+
+<body>
+<canvas id="demo" style="border:1px dashed #ccc;" width="400" height="400"></canvas>
+
+<script type="text/javascript">
+window.addEventListener('load', function() {
+	var canvas = document.getElementById('demo'),
+		context = canvas.getContext('2d');
+	
+	context.save();
+	context.font = '60px impact';
+	context.fillStyle = '#960';
+	context.textAlign = 'center';
+	context.shadowColor = 'rgba(0, 0, 0, 0.2)';
+	context.shadowOffsetX = 15;
+	context.shadowOffsetY = -10;
+	context.shadowBlur = 2;
+	
+	context.fillText('Hello World!', 200, 100, 400);
+
+	context.restore();
+}, true);
+
+</script>
+</body>
+</html>

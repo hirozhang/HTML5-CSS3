@@ -1,0 +1,28 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Canvas - Draw Image</title>
+    <!--[if lte IE 8]>
+    <script type="text/javascript" src="excanvas_r3/excanvas.compiled.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <img src="http://ihiro.org/html5-css3/reading/CHP4.Canvas/5.drawImage.demo.jpg" alt="cat" id="cat"/>
+    <canvas id="image" width="220px" height="300px" style="border:1px solid #eee;"></canvas>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            var context = document.getElementById('image').getContext('2d');
+            var cat = document.getElementById('cat');
+            //坐标5, 5处绘入 - 源图
+            context.drawImage(cat, 5, 5);
+            //坐标100, 100处绘入 - 源图缩放成80x60尺寸
+            context.drawImage(cat, 120, 120, 80, 60);
+            //坐标200, 200处绘入 - 源图从10,10处取160x100尺寸，缩放到80x50尺寸
+            context.drawImage(cat, 10, 10, 160, 100, 200, 200, 80, 50);
+        }
+    </script>
+
+</body>
+</html>

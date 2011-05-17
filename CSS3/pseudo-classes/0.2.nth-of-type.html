@@ -1,0 +1,162 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CSS3 Pseudo Classes -- :nth-of-type(N) | :nth-last-of-type(N)</title>
+    <style>
+        pre { float:left; border:1px solid #eee; width:300px; font-size:12px;}
+        div, p { margin:0; padding:0;}
+        .demo { margin:0 10px 10px; border:1px solid #ccc; background:#eee; float:left;}
+        .clear { clear:both;}
+        /*匹配同辈元素中【标签相同】的第三个元素*/
+        #demo1 :nth-of-type(3) {
+            background:#f60;
+        }
+        /*匹配同辈元素中【标签同为p】的第三个p元素*/
+        #demo2 p:nth-of-type(3) {
+            background:#f60;
+        }
+        /*匹配同辈元素中【标签同为div】的第三个div元素*/
+        #demo3 div:nth-of-type(3) {
+            background:#f60;
+        }
+        /*匹配同辈元素中【标签相同】的最后三个元素*/
+        #demo4 :nth-last-of-type(-n+3) {
+            background:#f60;
+        }
+        /*匹配同辈元素中【标签同为p】的最后三个p元素*/
+        #demo5 p:nth-last-of-type(-n+3) {
+            background:#f60;
+        }
+        /*匹配同辈元素中【标签同为div】的最后三个div元素*/
+        #demo6 div:nth-last-of-type(-n+3) {
+            background:#f60;
+        }
+    </style>
+</head>
+<body>
+
+<pre>
+/*匹配同辈元素中【标签相同】的第三个元素*/
+<code>
+:nth-of-type(3) {
+    background:#f60;
+}
+</code></pre>
+<div id="demo1" class="demo">
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <div>Div1</div>
+    <p>Para4</p>
+    <div>Div2</div>
+    <div>Div3</div>
+    <div>Div4</div>
+    <div>Div5</div>
+    <p>Para5</p>
+</div>
+
+<pre>
+/*匹配同辈元素中【标签同为p】的第三个p元素*/
+<code>
+p:nth-of-type(3) {
+    background:#f60;
+}
+</code></pre>
+<div id="demo2" class="demo">
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <div>Div1</div>
+    <p>Para4</p>
+    <div>Div2</div>
+    <div>Div3</div>
+    <div>Div4</div>
+    <div>Div5</div>
+    <p>Para5</p>
+</div>
+
+<pre>
+/*匹配同辈元素中【标签同为div】的第三个div元素*/
+<code>
+div:nth-of-type(3) {
+    background:#f60;
+}
+</code></pre>
+<div id="demo3" class="demo">
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <div>Div1</div>
+    <p>Para4</p>
+    <div>Div2</div>
+    <div>Div3</div>
+    <div>Div4</div>
+    <div>Div5</div>
+    <p>Para5</p>
+</div>
+
+<div class="clear"></div>
+
+<pre>
+/*匹配同辈元素中【标签相同】的最后三个元素*/
+<code>
+:nth-last-of-type(-n+3) {
+    background:#f60;
+}
+</code></pre>
+<div id="demo4" class="demo">
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <div>Div1</div>
+    <p>Para4</p>
+    <div>Div2</div>
+    <div>Div3</div>
+    <div>Div4</div>
+    <div>Div5</div>
+    <p>Para5</p>
+</div>
+
+<pre>
+/*匹配同辈元素中【标签同为p】的最后三个p元素*/
+<code>
+p:nth-last-of-type(-n+3) {
+    background:#f60;
+}
+</code></pre>
+<div id="demo5" class="demo">
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <div>Div1</div>
+    <p>Para4</p>
+    <div>Div2</div>
+    <div>Div3</div>
+    <div>Div4</div>
+    <div>Div5</div>
+    <p>Para5</p>
+</div>
+
+<pre>
+/*匹配同辈元素中【标签同为div】的最后三个div元素*/
+<code>
+div:nth-last-of-type(-n+3) {
+    background:#f60;
+}
+</code></pre>
+<div id="demo6" class="demo">
+    <p>Para1</p>
+    <p>Para2</p>
+    <p>Para3</p>
+    <div>Div1</div>
+    <p>Para4</p>
+    <div>Div2</div>
+    <div>Div3</div>
+    <div>Div4</div>
+    <div>Div5</div>
+    <p>Para5</p>
+</div>
+
+</body>
+</html>

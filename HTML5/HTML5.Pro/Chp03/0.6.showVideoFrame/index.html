@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Show Video Frame</title>
+</head>
+
+<body>
+
+<video id="movies" autoplay oncanplay="startVideo()" onended="stopTimeline()" autobuffer="true" onClick="togglePlay()" width="400px" height="300px">
+    <source src="http://localhost/Player/tub.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+</video>
+
+<canvas id="timeline" width="600px" height="450px" style="border:1px solid #eee;"></canvas>
+
+
+<script type="text/javascript">
+// # of milliseconds between timeline frame updates
+var updateInterval = 3000;
+// size of the timeline frames
+var frameWidth = 100;
+var frameHeight = 75;
+// number of timeline frames
+var frameRows = 6;
+var frameColumns = 6;
+var frameGrid = frameRows * frameColumns;
+
+// current frame
+var frameCount = 0;
+// to cancel the timer at end of play
+var intervalId;
+var videoStarted = false;
+
+function togglePlay() {
+	var video = document.getElementById("movies");
+	
+	if(video.paused) {
+		video.play();
+	} else {
+		video.pause();
+	};
+}
+
+
+function updateFrame() {
+	var video = document.getElementById("movies");
+	var timeline = document.getElementById("timeline");
+	var ctx = timeline.getContext("2d");
+	
+	// calculate out the current position based on frame
+	// count, then draw the image there using the video
+	// as a source
+	var framePosition = frameCount % frameGrid;
+	var frameX = (framePosition % frameColumns) * frameWidth;
+	var frameY = (Math.floor(framePosition / frameRows)) * frameHeight;
+	
+	ctx.drawImage(video, 0, 0, 400, 300, frameX, frameY, frameWidth, frameHeight);
+	frameCount++;
+}
+
+function startVideo() {
+	// only set up the timer the first time the
+	// video is started
+	if (videoStarted) {	return;}
+	
+	videoStarted = true;
+	
+	// calculate an initial frame, then create
+	// additional frames on a regular timer
+	updateFrame();
+	intervalId = setInterval(updateFrame, updateInterval);
+}
+
+// set up a handler to seek the video when a frame
+// is clicked
+var timeline = document.getElementById("timeline");
+timeline.onclick = function(evt) {
+	var offX = evt.layerX - timeline.offsetLeft;
+	var offY = evt.layerY - timeline.offsetTop;
+	
+	// calculate which frame in the grid was clicked
+	// from a zero-based index
+	var clickedFrame = Math.floor(offY / frameHeight) * frameRows;
+	clickedFrame += Math.floor(offX / frameWidth);
+	
+	// find the actual frame since the video started
+	var seekedFrame = (((Math.floor(frameCount / frameGrid)) * frameGrid) + clickedFrame);
+	
+	// if the user clicked ahead of the current frame
+	// then assume it was the last round of frames
+	if (clickedFrame > (frameCount % 16)) {	seekedFrame -= frameGrid;}
+	
+	// can't seek before the video
+	if (seekedFrame < 0) { return;}
+}
+
+// stop gathering the timeline frames
+function stopTimeline() {
+	clearInterval(intervalId);
+}
+</script>
+</body>
+</html>

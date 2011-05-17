@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Form - Autofoucs</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="q" autofocus="autofocus"/>
+        <input type="submit" value="Do"/>
+    </form>
+<script type="text/javascript">
+    if(!('autofocus' in document.createElement('input'))) {
+        document.getElementById('q').focus();
+    }
+</script>
+</body>
+</html>

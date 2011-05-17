@@ -1,0 +1,55 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Canvas - Draw Text</title>
+</head>
+<body>
+
+    <canvas id="text" width="600px" height="400px"></canvas>
+
+    <script type="text/javascript">
+        var context = document.getElementById('text').getContext('2d');
+        context.beginPath();
+        context.moveTo(0, 40);
+        context.lineTo(240, 40);   //预留20px的空白
+        context.moveTo(260, 40);
+        context.lineTo(500, 40);
+        //画右上的箭头
+        context.moveTo(495, 35);
+        context.lineTo(500, 40);
+        context.lineTo(495, 45);
+
+        context.moveTo(60, 0);
+        context.lineTo(60, 153);    //预留20px的空白
+        context.moveTo(60, 173);
+        context.lineTo(60, 375);
+        //画左下的箭头
+        context.moveTo(65, 370);
+        context.lineTo(60, 375);
+        context.lineTo(55, 370);
+
+        //着色
+        context.strokeStyle = "#000";
+        context.stroke();
+
+        context.font = "bold 12px sans-serif";
+        //标注X坐标文字
+        context.fillText("x", 248, 43);
+        //标注Y坐标文字
+        context.fillText("y", 58, 165);
+
+        context.textBaseline = "top";
+        //标注起始坐标文字
+        context.fillText("(0, 0)", 4, 4);
+        //画左上角的标识点
+        context.fillRect(0, 0, 2, 2);
+
+        context.textAlign = "right";
+        context.textBaseline = "bottom";
+        //标注结束坐标文字
+        context.fillText("(500, 375)", 492, 370);
+        //画右下角的标识点
+        context.fillRect(494, 372, 2, 2);
+    </script>
+</body>
+</html>

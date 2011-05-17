@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Canvas - Draw Rect</title>
+</head>
+<body>
+
+    <canvas id="rect" width="400px" height="300px"></canvas>
+
+    <script type="text/javascript">
+        var rect = document.getElementById('rect').getContext('2d');
+
+        //画一个80x80的正方形
+        rect.fillStyle = '#eee';
+        rect.fillRect(10, 10, 90, 90);
+        //在80x80的正方形中间截去一个50x50的正方形
+        rect.clearRect(20, 20, 70, 70);
+
+        //画一个空心的80x80的正方形
+        rect.strokeStyle = '#ccc';
+        rect.strokeRect(100.5, 100.5, 180, 180);    //.5 for line width(two side), 2x0.5=1px
+
+    </script>
+</body>
+</html>

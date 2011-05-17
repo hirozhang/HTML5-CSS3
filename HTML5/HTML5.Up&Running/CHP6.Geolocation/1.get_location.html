@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Geolocation - Get Location</title>
+</head>
+<body>
+    <script type="text/javascript">
+        function get_location() {
+            navigator.geolocation.getCurrentPosition(show_map, handle_error);
+        }
+        function show_map(position) {
+            var latitude = position.coords.latitude,
+                longitude = position.coords.longitude;
+            document.write('My position: latitude='+ latitude +',longitude='+ longitude);
+        }
+        function handle_error() {
+            document.write('Can not get your location this time!');
+        }
+        get_location();
+    </script>
+</body>
+</html>

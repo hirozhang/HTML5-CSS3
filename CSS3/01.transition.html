@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>CSS3 -- Transition</title>
+    <style type="text/css">
+    * { margin:0; padding:0;}
+    body { padding:100px;  }
+
+    a { display:block; width:160px; height:30px; line-height:30px; text-align:center; padding:10px; background:#33589f; color:#fff; text-decoration:none; text-transform:uppercase;
+        /*只有当鼠标移出后才处理*/
+        -moz-transition:background 0.2s linear 0s;
+    }
+
+    a:hover { background:#263c7b; color:#f60;
+        text-shadow:2px 2px 10px #f00;
+        /* 只有当鼠标移入时才处理
+           注：若a:hover中不写transition,则会继承a中的transition */
+        /*
+        1. 单个属性
+            -moz-transition:background 0.5s ease-out 0s;
+        2. 多个属性：
+           -moz-transition:background, 0.5s ease-out 0s, color 0.4 ease-out 0s;
+        */
+        -moz-transition:background 0.5s ease-out, color 0.4s ease-out, text-shadow 0.3s linear;
+    }
+    </style>
+</head>
+<body>
+
+    <a href="http://www.ihiro.org/" target="_blank">ihiro.org</a>
+</body>
+</html>

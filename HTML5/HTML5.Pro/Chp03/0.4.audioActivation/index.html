@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Audio Activation</title>
+</head>
+
+<body>
+
+<audio id="music" controls autoplay>
+	<source src="../src/BadDay.mp3">
+</audio>
+
+<button id="toggle" onclick="toggleMusic()">Play</button>
+<p id="para">Click to play!</p>
+<script type="text/javascript">
+function toggleMusic() {
+	var music = document.getElementById('music'),
+		toggleBtn = document.getElementById('toggle'),
+		para = document.getElementById('para');
+	
+	if(music.paused) {
+		music.play();
+		toggleBtn.innerHtml = 'Pause';
+		para.innerHtml = 'Click to Pause!';
+	} else {
+		music.pause();
+		toggleBtn.innerHTML = 'Play';
+		para.innerHtml = 'Click to Play!';
+	};
+}
+</script>
+
+</body>
+</html>

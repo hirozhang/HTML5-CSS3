@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>CSS3 Pseudo Classes -- :nth-child(N) | :nth-last-child(N)</title>
+    <style>
+        tr { background:#eee;}
+        pre { float:left; border:1px solid #eee; width:300px; font-size:12px;}
+        .demo { margin-bottom:10px; float:left; margin:0 10px 10px;}
+        .clear { clear:both;}
+        /*匹配奇数行子元素   tr:nth-child(odd)*/
+        #demo1 tr:nth-child(2n+1) {
+            background:#f60;
+        }
+        /*匹配偶数行子元素   tr:nth-child(even)*/
+        #demo2 tr:nth-child(2n) {
+            background:#f60;
+        }
+        /*匹配前三个子元素*/
+        #demo3 tr:nth-child(-n+3) {
+          background:#f60;
+        }
+        /*匹配第一个子元素*/
+        #demo4 tr:nth-child(1) {
+          background:#f60;
+        }
+        /*匹配最后四个子元素*/
+        #demo5 tr:nth-last-child(-n+3) {
+          background:#f60;
+        }
+        /*匹配最后一个子元素*/
+        #demo6 tr:nth-last-child(1) {
+          background:#f60;
+        }
+    </style>
+</head>
+<body>
+<pre>
+/*匹配奇数行子元素   tr:nth-child(odd)*/
+<code>
+tr:nth-child(2n+1) {
+        background:#f60;
+}
+</code></pre>
+    <table id="demo1" class="demo" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Years</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>William Hartnell</th>
+          <td>1963-66</td>
+        </tr>
+        <tr>
+          <th>Patrick Troughton</th>
+          <td>1966-69</td>
+        </tr>
+        <tr>
+          <th>Jon Pertwee</th>
+          <td>1970-74</td>
+        </tr>
+        <tr>
+          <th>Tom Baker</th>
+          <td>1974-81</td>
+        </tr>
+        <tr>
+          <th>Peter Davison</th>
+          <td>1981-84</td>
+        </tr>
+        <tr>
+          <th>Colin Baker</th>
+          <td>1984-86</td>
+        </tr>
+        <tr>
+          <th>Sylvester McCoy</th>
+          <td>1987-89</td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre>
+/*匹配偶数行子元素   tr:nth-child(even)*/
+<code>
+tr:nth-child(2n) {
+        background:#f60;
+}
+</code></pre>
+    <table id="demo2" class="demo" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Years</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>William Hartnell</th>
+          <td>1963-66</td>
+        </tr>
+        <tr>
+          <th>Patrick Troughton</th>
+          <td>1966-69</td>
+        </tr>
+        <tr>
+          <th>Jon Pertwee</th>
+          <td>1970-74</td>
+        </tr>
+        <tr>
+          <th>Tom Baker</th>
+          <td>1974-81</td>
+        </tr>
+        <tr>
+          <th>Peter Davison</th>
+          <td>1981-84</td>
+        </tr>
+        <tr>
+          <th>Colin Baker</th>
+          <td>1984-86</td>
+        </tr>
+        <tr>
+          <th>Sylvester McCoy</th>
+          <td>1987-89</td>
+        </tr>
+      </tbody>
+    </table>
+
+<div class="clear"></div>
+
+<pre>
+/*匹配前三个子元素*/
+<code>
+tr:nth-child(-n+3) {
+  background:#f60;
+}
+</code></pre>
+    <table id="demo3" class="demo" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Years</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>William Hartnell</th>
+          <td>1963-66</td>
+        </tr>
+        <tr>
+          <th>Patrick Troughton</th>
+          <td>1966-69</td>
+        </tr>
+        <tr>
+          <th>Jon Pertwee</th>
+          <td>1970-74</td>
+        </tr>
+        <tr>
+          <th>Tom Baker</th>
+          <td>1974-81</td>
+        </tr>
+        <tr>
+          <th>Peter Davison</th>
+          <td>1981-84</td>
+        </tr>
+        <tr>
+          <th>Colin Baker</th>
+          <td>1984-86</td>
+        </tr>
+        <tr>
+          <th>Sylvester McCoy</th>
+          <td>1987-89</td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre>
+/*匹配第一个子元素*/
+<code>
+tr:nth-child(1) {
+  background:#f60;
+}
+</code></pre>
+    <table id="demo4" class="demo" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Years</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>William Hartnell</th>
+          <td>1963-66</td>
+        </tr>
+        <tr>
+          <th>Patrick Troughton</th>
+          <td>1966-69</td>
+        </tr>
+        <tr>
+          <th>Jon Pertwee</th>
+          <td>1970-74</td>
+        </tr>
+        <tr>
+          <th>Tom Baker</th>
+          <td>1974-81</td>
+        </tr>
+        <tr>
+          <th>Peter Davison</th>
+          <td>1981-84</td>
+        </tr>
+        <tr>
+          <th>Colin Baker</th>
+          <td>1984-86</td>
+        </tr>
+        <tr>
+          <th>Sylvester McCoy</th>
+          <td>1987-89</td>
+        </tr>
+      </tbody>
+    </table>
+
+<div class="clear"></div>
+
+<pre>
+/*匹配最后四个子元素*/
+<code>
+tr:nth-last-child(-n+3) {
+  background:#f60;
+}
+</code></pre>
+    <table id="demo5" class="demo" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Years</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>William Hartnell</th>
+          <td>1963-66</td>
+        </tr>
+        <tr>
+          <th>Patrick Troughton</th>
+          <td>1966-69</td>
+        </tr>
+        <tr>
+          <th>Jon Pertwee</th>
+          <td>1970-74</td>
+        </tr>
+        <tr>
+          <th>Tom Baker</th>
+          <td>1974-81</td>
+        </tr>
+        <tr>
+          <th>Peter Davison</th>
+          <td>1981-84</td>
+        </tr>
+        <tr>
+          <th>Colin Baker</th>
+          <td>1984-86</td>
+        </tr>
+        <tr>
+          <th>Sylvester McCoy</th>
+          <td>1987-89</td>
+        </tr>
+      </tbody>
+    </table>
+
+<pre>
+/*匹配最后一个子元素*/
+<code>
+tr:nth-last-child(1) {
+  background:#f60;
+}
+</code></pre>
+    <table id="demo6" class="demo" cellpadding="0" cellspacing="0" border="1">
+      <thead>
+        <tr>
+            <th>Actor</th>
+            <th>Years</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>William Hartnell</th>
+          <td>1963-66</td>
+        </tr>
+        <tr>
+          <th>Patrick Troughton</th>
+          <td>1966-69</td>
+        </tr>
+        <tr>
+          <th>Jon Pertwee</th>
+          <td>1970-74</td>
+        </tr>
+        <tr>
+          <th>Tom Baker</th>
+          <td>1974-81</td>
+        </tr>
+        <tr>
+          <th>Peter Davison</th>
+          <td>1981-84</td>
+        </tr>
+        <tr>
+          <th>Colin Baker</th>
+          <td>1984-86</td>
+        </tr>
+        <tr>
+          <th>Sylvester McCoy</th>
+          <td>1987-89</td>
+        </tr>
+      </tbody>
+    </table>
+</body>
+</html>

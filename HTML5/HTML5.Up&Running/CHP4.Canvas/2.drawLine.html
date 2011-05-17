@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Canvas - Draw Line</title>
+</head>
+<body>
+
+    <canvas id="line" width="400px" height="300px"></canvas>
+
+    <script type="text/javascript">
+        var line = document.getElementById('line').getContext('2d');
+        //画一条垂直线
+        line.moveTo(20, 20);
+        line.lineTo(20, 100);
+
+        //画一条斜角线
+        line.lineTo(80, 50);
+
+        //再一条斜角线闭合三角形
+        line.lineTo(20, 20);
+
+        //给三角形边线着色
+        line.strokeStyle = '#f00';
+        line.stroke();
+    </script>
+</body>
+</html>

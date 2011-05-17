@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Stroke Line</title>
+</head>
+
+<body>
+<canvas id="diag" style="border:1px solid #090;" width="200" height="200"></canvas>
+
+<script type="text/javascript">
+window.addEventListener('load', function() {
+	var canvas = document.getElementById('diag'),
+		context = canvas.getContext('2d');
+	
+	context.beginPath();
+	/*context.moveTo(70, 140);
+	context.lineTo(140, 70);*/
+	for(var i=10; i<200; i+=10) {
+		context.moveTo(i, 0);
+		context.lineTo(i, 200);
+	};
+	context.closePath();
+	context.stroke();
+	
+	
+	context.beginPath();
+	context.strokeStyle = '#fc0';
+	context.moveTo(200, 0);
+	context.lineTo(200, 60);
+	context.lineTo(170, 30);
+	context.lineTo(200, 0);
+	context.closePath();
+	context.stroke();
+}, true);
+</script>
+</body>
+</html>

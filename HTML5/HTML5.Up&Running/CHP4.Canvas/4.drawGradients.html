@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Canvas - Draw Gradients</title>
+</head>
+<body>
+
+    <canvas id="gradients" width="600px" height="400px"></canvas>
+
+    <script type="text/javascript">
+        var context = document.getElementById('gradients').getContext('2d');
+
+        //创建一个宽300px的线性渐变， 决定了渐变方向，仅x1为横向， 仅x2为纵向， 两者都有为对角线渐变
+        var my_gradients = context.createLinearGradient(0, 0, 300, 225);
+        //起始色：黑色
+        my_gradients.addColorStop(0, 'black');
+        //终止色： 白色
+        my_gradients.addColorStop(1, 'white');
+        //设置填充色
+        context.fillStyle = my_gradients;
+        //画300x225尺寸的线性渐变矩形
+        context.fillRect(0, 0, 300, 225);
+    </script>
+</body>
+</html>

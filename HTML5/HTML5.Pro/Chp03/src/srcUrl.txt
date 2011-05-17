@@ -1,0 +1,5 @@
+video:
+	http://localhost/Player/tub.mp4
+
+video poster:
+	http://www.ihiro.me/wp/wp-content/uploads/2010/11/exhibition-logo.jpg
